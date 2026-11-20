@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca MVC</title>
+</head>
+
+<body>
+
+<header>
+    <h1>Biblioteca MVC</h1>
+    <span>Sistema de gerenciamento</span>
+</header>
+
+<main class="container">
+
+    <section class="welcome">
+        <h2>Painel de controle</h2>
+        <p>Bem-vindo ao sistema de gerenciamento da biblioteca.</p>
+    </section>
+
+    <section class="statistics">
+
+        <div class="card">
+            <h3>Livros cadastrados</h3>
+            <h2>120</h2>
+            <p>Acervo disponível</p>
+        </div>
+
+        <div class="card">
+            <h3>Usuários</h3>
+            <h2>48</h2>
+            <p>Usuários registrados</p>
+        </div>
+
+        <div class="card">
+            <h3>Empréstimos ativos</h3>
+            <h2>16</h2>
+            <p>Livros emprestados</p>
+        </div>
+
+        <div class="card">
+            <h3>Devoluções pendentes</h3>
+            <h2>3</h2>
+            <p>Devoluções aguardadas</p>
+        </div>
+
+    </section>
+
+    <section class="management">
+
+        <h2>Gerenciamento</h2>
+
+        <div class="modules">
+
+            <a href="/livros" class="module">
+                <h3>Livros</h3>
+                <p>Consultar e cadastrar livros.</p>
+            </a>
+
+            <a href="/autores" class="module">
+                <h3>Autores</h3>
+                <p>Gerenciar autores cadastrados.</p>
+            </a>
+
+            <a href="/categorias" class="module">
+                <h3>Categorias</h3>
+                <p>Organizar categorias de livros.</p>
+            </a>
+
+            <a href="/usuarios" class="module">
+                <h3>Usuários</h3>
+                <p>Gerenciar usuários da biblioteca.</p>
+            </a>
+
+            <a href="/emprestimos" class="module">
+                <h3>Empréstimos</h3>
+                <p>Consultar e controlar empréstimos.</p>
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+</body>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(
+                    to bottom right,
+                    rgb(54, 17, 85),
+                    rgb(21, 6, 32)
+            );
+            font-family: Arial, sans-serif;
+            color: #333;
+            padding: 25px;
+        }
+
+        header {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            padding: 15px 0 30px;
+        }
+
+        header h1 {
+            text-shadow: 3px 2px 1px #18a5a5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .welcome {
+            color: white;
+            margin-bottom: 25px;
+        }
+
+        .welcome p {
+            margin-top: 8px;
+            color: #d0bddc;
+        }
+
+        .statistics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: azure;
+            padding: 22px;
+            border-radius: 12px;
+            border: 1px solid #777;
+        }
+
+        .card h2 {
+            color: #802bc5;
+            font-size: 30px;
+            margin: 12px 0 5px;
+        }
+
+        .management {
+            background: azure;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .management h2 {
+            margin-bottom: 20px;
+            color: #361155;
+        }
+
+        .modules {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .module {
+            padding: 20px;
+            border: 1px solid #b9a3c9;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #361155;
+            transition: 0.2s;
+        }
+
+        .module:hover {
+            background: #9843dd;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .module h3 {
+            margin-bottom: 8px;
+        }
+
+        .module p {
+            font-size: 14px;
+        }
+
+        @media (max-width: 800px) {
+            .statistics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .modules {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .modules {
+                grid-template-columns: 1fr;
+            }
+
+            body {
+                padding: 15px;
+            }
+        }
+    </style>
+</html>
